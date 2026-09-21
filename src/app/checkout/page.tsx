@@ -143,10 +143,10 @@ export default function CheckoutPage() {
             <p className="text-sm text-zinc-500">
               Demo mode — no real card required. Enter any details.
             </p>
-            <Input placeholder="Card number" defaultValue="4242 4242 4242 4242" />
+            <Input placeholder="Card number" required />
             <div className="grid grid-cols-2 gap-4">
-              <Input placeholder="MM / YY" defaultValue="12 / 28" />
-              <Input placeholder="CVC" defaultValue="123" />
+              <Input placeholder="MM / YY" required />
+              <Input placeholder="CVC" required />
             </div>
           </section>
 
