@@ -10,6 +10,7 @@ import { registerAction } from "@/actions/auth";
 export default function RegisterPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   async function handleSubmit(formData: FormData) {
     setLoading(true);
@@ -53,7 +54,22 @@ export default function RegisterPage() {
           </div>
           <div className="space-y-2">
             <label className="text-sm font-medium">Password</label>
-            <Input type="password" name="password" placeholder="••••••••" required minLength={6} />
+          <div className="relative">
+  <Input
+    type={showPassword ? "text" : "password"}
+    name="password"
+    placeholder="Password"
+    required
+    className="pr-10"
+  />
+  <button
+    type="button"
+    onClick={() => setShowPassword((prev) => !prev)}
+    className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-zinc-500"
+  >
+    {showPassword ? "Hide" : "Show"}
+  </button>
+</div>
           </div>
           <Button type="submit" className="w-full" size="lg" disabled={loading}>
             {loading ? "Creating account..." : "Create Account"}
