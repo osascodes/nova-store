@@ -62,12 +62,13 @@ export default function LoginPage() {
     className="pr-10"
   />
   <button
-    type="button"
-    onClick={() => setShowPassword((prev) => !prev)}
-    className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-zinc-500"
-  >
-    {showPassword ? "Hide" : "Show"}
-  </button>
+  type="button"
+  onMouseDown={(e) => e.preventDefault()}
+  onClick={() => setShowPassword((prev) => !prev)}
+  className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-zinc-500"
+>
+  {showPassword ? "Hide" : "Show"}
+</button>
 </div>
           </div>
           <Button type="submit" className="w-full" size="lg" disabled={loading}>
